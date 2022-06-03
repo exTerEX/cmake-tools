@@ -1,9 +1,29 @@
+# ----------------------------------
+# MIT License
+#
+# Copyright (c) 2022 Andreas Sagen
+# ----------------------------------
+
 cmake_minimum_required(VERSION 3.0.0)
 
 include(CMakeParseArguments)
 
+#.rst:
+# .. command:: VERSION_FROM_GIT
+#
+#   Check the current last tag in the local git repository.
+#
+#   You can then use:
+#
+#   - **GIT_TAG**: Return raw git tag
+#   - **SEMVER**: Return a SemVer with metadata changes.
+#   - **VERSION**: Return SemVer version string without metadata changes.
+#   - **VERSION_MAJOR**: Return major version.
+#   - **VERSION_MINOR**: Return minor verson.
+#   - **VERSION_PATCH**: Return patch version.
+#
+#   If no tag is found, returns version 0.0.0.
 function(version_from_git)
-  # Parse arguments
   set(options OPTIONAL FAST)
 
   set(oneValueArgs
