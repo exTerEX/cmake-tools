@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0 FATAL_ERROR)
 
-project(CMake-Tools LANGUAGES)
+PROJECT(CMake-Tools LANGUAGES)
 
-enable_testing()
+ENABLE_TESTING()
 
-file(GLOB FILES
-    LIST_DIRECTORIES true
-    "${CMAKE_SOURCE_DIR}/modules/*.cmake"
-)
+FILE(
+  GLOB FILES
+  LIST_DIRECTORIES true
+  "${CMAKE_SOURCE_DIR}/modules/*.cmake")
 
-foreach(FILE IN LISTS FILES)
-    include("${FILE}")
-endforeach()
+FOREACH(FILE IN LISTS FILES)
+  INCLUDE("${FILE}")
+ENDFOREACH()
